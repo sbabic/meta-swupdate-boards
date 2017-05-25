@@ -1,8 +1,10 @@
 This README file contains information on the contents of the
-swupdate-raspberry layer.
+swupdate-boards layer.
+
+The layer contains examples how to use the SWUpdate projects. Examples
+with some common boards (Beaglebone Black, RaspberryPI) are provided.
 
 Please see the corresponding sections below for details.
-
 
 Dependencies
 ============
@@ -10,55 +12,29 @@ Dependencies
 This layer depends on:
 
   URI: git://git.openembedded.org/bitbake
-  branch: master
 
   URI: git://git.openembedded.org/openembedded-core
   layers: meta
-  branch: master
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+  URI: git://github.com/sbabic/meta-swupdate.git
+  layers: meta-swupdate
 
+Maintainer
+----------
 
-Patches
-=======
+Stefano Babic <sbabic@denx.de>
 
-Please submit any patches against the swupdate-raspberry layer to the
-xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
+Submitting patches
+------------------
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+You can submit your patches (or post questions reagarding
+this layer to the swupdate Mailing List:
 
+	swupdate@googlegroups.com
 
-Table of Contents
-=================
+When creating patches, please use something like:
 
-  I. Adding the swupdate-raspberry layer to your build
- II. Misc
+    git format-patch -s --subject-prefix='meta-swupdate][PATCH' <revision range>
 
-
-I. Adding the swupdate-raspberry layer to your build
-=================================================
-
---- replace with specific instructions for the swupdate-raspberry layer ---
-
-In order to use this layer, you need to make the build system aware of
-it.
-
-Assuming the swupdate-raspberry layer exists at the top-level of your
-yocto build tree, you can add it to the build system by adding the
-location of the swupdate-raspberry layer to bblayers.conf, along with any
-other layers needed. e.g.:
-
-  BBLAYERS ?= " \
-    /path/to/yocto/meta \
-    /path/to/yocto/meta-poky \
-    /path/to/yocto/meta-yocto-bsp \
-    /path/to/yocto/meta-swupdate-raspberry \
-    "
-
-
-II. Misc
-========
-
---- replace with specific information about the swupdate-raspberry layer ---
+Please use 'git send- email' to send the generated patches to the ML
+to bypass changes from your mailer.
