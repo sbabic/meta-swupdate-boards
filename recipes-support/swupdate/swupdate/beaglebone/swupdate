@@ -63,7 +63,7 @@ do_start() {
 			selection="-e stable,copy1"
 		fi
 
-		state=`fw_printenv hawkbit_state | cut -f 2 -d'='`
+		state=`fw_printenv ustate | cut -f 2 -d'='`
 		if [ $state == 1 ];then
 			EXTRA_ARGS="-c 2"
 		else
