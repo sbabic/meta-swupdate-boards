@@ -8,8 +8,6 @@ SRC_URI += " \
      file://swupdate.cfg \
      "
 
-SRCREV = "${AUTOREV}"
-
 do_install_append() {
     install -d ${D}${bindir}
     install -m 755 ${S}/progress ${D}${bindir}
