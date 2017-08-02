@@ -8,8 +8,9 @@ software =
 			copy1 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi3.ext3";
+						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
 						type = "raw";
+						compressed = true;
 						device = "/dev/mmcblk0p2";
 					}
 				);
@@ -30,8 +31,9 @@ software =
 			copy2 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi3.ext3";
+						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
 						type = "raw";
+						compressed = true;
 						device = "/dev/mmcblk0p3";
 					}
 				);

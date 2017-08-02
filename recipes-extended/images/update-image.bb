@@ -22,7 +22,7 @@ SWUPDATE_IMAGES = " \
         core-image-full-cmdline \
 	"
 
-SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".ext3"
+SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".ext4.gz"
 
 #SWUPDATE_SIGNING = "1"
 
