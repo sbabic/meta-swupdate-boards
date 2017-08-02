@@ -74,7 +74,7 @@ do_start() {
 		# be sure that we can change U-Boot ENV
 		echo 0 > /sys/block/mmcblk1boot1/force_ro
 		echo "Starting $DESC ..."
-		exec /usr/bin/progress -w -p -r &
+		exec /usr/bin/swupdate-progress -w -p -r &
 		exec $DAEMON -v -H beaglebone:1.0 ${selection} -f /etc/swupdate.cfg -u "$EXTRA_ARGS" -w "" &
 		exit 0
 		;;

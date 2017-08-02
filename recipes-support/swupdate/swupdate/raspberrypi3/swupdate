@@ -72,7 +72,7 @@ do_start() {
 
 		cd /home/root
 		echo "Starting $DESC ..."
-		exec /usr/bin/progress -w -p -r &
+		exec /usr/bin/swupdate-progress -w -p -r &
 		exec $DAEMON -v -H raspberrypi3:1.0 ${selection} -f /etc/swupdate.cfg -u "$EXTRA_ARGS" -w "" &
 		exit 0
 		;;
