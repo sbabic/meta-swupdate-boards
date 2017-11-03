@@ -26,14 +26,14 @@ Stefano Babic <sbabic@denx.de>
 Submitting patches
 ------------------
 
-You can submit your patches (or post questions reagarding
+You can submit your patches (or post questions regarding
 this layer to the swupdate Mailing List:
 
 	swupdate@googlegroups.com
 
 When creating patches, please use something like:
 
-    git format-patch -s --subject-prefix='meta-swupdate][PATCH' <revision range>
+    git format-patch -s --subject-prefix='meta-swupdate-boards][PATCH' <revision range>
 
-Please use 'git send- email' to send the generated patches to the ML
+Please use 'git send-email' to send the generated patches to the ML
 to bypass changes from your mailer.
