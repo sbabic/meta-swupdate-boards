@@ -59,7 +59,7 @@ function preinst()
 	if (found) then
 		f:close()
 		fo:close()
-		return out, true
+		return true, out
 	end
 
 	start=start+size
