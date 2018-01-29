@@ -1,0 +1,71 @@
+software =
+{
+	version = "2.4";
+
+	wandboard = {
+		hardware-compatibility: [ "revB", "revC", "revD"];
+		stable : {
+			copy1 : {
+				images: (
+					{
+						filename = "core-image-full-cmdline-wandboard.ext4.gz";
+						type = "raw";
+						compressed = true;
+						device = "/dev/mmcblk2p1";
+					}
+				);
+				scripts: (
+					{
+						filename = "emmcsetup.lua";
+						type = "lua";
+					}
+				);
+                                uboot: (
+                                        {
+                                        	name = "rootpart";
+                                  		value = "1";
+                                        },
+                                        {
+                                        	name = "finduuid";
+                                  		value = "part uuid mmc 0:${rootpart} uuid";
+                                        },
+                                        {
+                                        	name = "scan_dev_for_boot_part";
+                                  		value = "setenv devplist ${rootpart};for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done";
+                                        }
+				);
+
+			};
+			copy2 : {
+				images: (
+					{
+						filename = "core-image-full-cmdline-wandboard.ext4.gz";
+						type = "raw";
+						compressed = true;
+						device = "/dev/mmcblk2p2";
+					}
+				);
+				scripts: (
+					{
+						filename = "emmcsetup.lua";
+						type = "lua";
+					}
+				);
+                                uboot: (
+                                        {
+                                        	name = "rootpart";
+                                  		value = "2";
+                                        },
+                                        {
+                                        	name = "finduuid";
+                                  		value = "part uuid mmc 0:${rootpart} uuid";
+                                        },
+                                        {
+                                        	name = "scan_dev_for_boot_part";
+                                  		value = "setenv devplist ${rootpart};for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done";
+                                        }
+				);
+			};
+		};
+	}
+}
