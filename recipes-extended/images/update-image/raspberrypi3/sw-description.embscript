@@ -4,12 +4,11 @@ software =
 
 	raspberrypi3 = {
 
-
 		embedded-script ="
- --[[
+--[[
 	SWUpdate Embedded Script Example
 	Copyright (C) 2017, Stefano Babic
-        Description:
+	Description:
 	This is just an example how to integrate an embedded script in sw-description
 	The script is first parsed, be sure to escape double quotes
 	and use double quotes just when they are strictly required.
@@ -25,19 +24,19 @@ INPUT = 1
 OUTPUT = 0
 
 --[[
-        Some functions are simply retrieved from LUA examples
-        see book 'Programming in Lua' or some snipset from internet.
+	Some functions are simply retrieved from LUA examples
+	see book 'Programming in Lua' or some snipset from internet.
 ]]
 
 function file_exists(filename)
-   local file=io.open(filename,'r')
-   if file~=nil then io.close(file) return true else return false end
+	local file=io.open(filename,'r')
+	if file~=nil then io.close(file) return true else return false end
 end
 
 function writeToFile (filename, data)
 	local file=io.open(filename, 'w')
 	file:write(data)
-	file:close()	
+	file:close()
 end
 
 function readFromFile (filename)
@@ -45,7 +44,7 @@ function readFromFile (filename)
 		local file=io.open(filename, 'r')
 		local data = file:read(1)
 		file:close()
-		return data	
+		return data
 	else
 		return \"\"
 	end
@@ -76,18 +75,18 @@ function allowInstall(image)
 
 	-- Completely unuseful, but it is to show how to get values from image
 
-        for k,l in pairs(image) do
-                swupdate.trace(\"image[\" .. tostring(k) .. \"] = \" .. tostring(l))
-        end
+	for k,l in pairs(image) do
+		swupdate.trace(\"image[\" .. tostring(k) .. \"] = \" .. tostring(l))
+	end
 
 	-- Read GPIO21, that means pin 40 on the Header
 	pinMode(21,INPUT)
 	val=digitalRead(21)
 	if (val == 0) then
-                swupdate.trace(\"Updated allowed: go on !\")
+		swupdate.trace(\"Updated allowed: go on !\")
 		return true, image
 	else
-                swupdate.trace(\"Updated forbidden: STOP !\")
+		swupdate.trace(\"Updated forbidden: STOP !\")
 		return false, image
 	end
 end ";
@@ -110,11 +109,11 @@ end ";
 						type = "lua";
 					}
 				);
-                                uboot: (
-                                        {
-                                        	name = "rpipart";
-                                  		value = "2";
-                                        }
+				uboot: (
+					{
+						name = "rpipart";
+						value = "2";
+					}
 				);
 
 			};
@@ -134,11 +133,11 @@ end ";
 						type = "lua";
 					}
 				);
-                                uboot: (
-                                        {
-                                        	name = "rpipart";
-                                  		value = "3";
-                                        }
+				uboot: (
+					{
+						name = "rpipart";
+						value = "3";
+					}
 				);
 			};
 		};
