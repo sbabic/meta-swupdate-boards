@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemon to connect ser2net to a USB tty UART
+After=network.target remote-fs.target
+
+[Service]
+ExecStart=/usr/bin/usbline
+Restart=on-failure
+RestartSec=15s
+
+[Install]
+WantedBy=multi-user.target

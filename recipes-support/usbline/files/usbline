@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+# Copyright (C) 2018 Stefano Babic sbabic@denx.de
+
+import os
+import socket
+import sys
+import subprocess as sub
+import re
+
+TCP_IP = ''
+TCP_PORT = 5005
+BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
+TARGETS = '/etc/ports'
+SER2NETCONF = '/etc/ser2net.conf'
+SERVER = socket.gethostname()
+
+def ser2netport(usbport):
+	path = '/sys/bus/usb-serial/devices'
+	for fname in os.listdir(path):
+		filepath = os.path.join(path,fname)
+		filepath = os.path.realpath(filepath)
+		if re.search(usbport,filepath):
+			for line in open(SER2NETCONF):
+				if re.search('^#', line):
+					continue
+				if re.search('^BANNER', line):
+					continue
+				try:
+					fields = line.strip().split(':')
+					tty = fields[3].strip()
+					if tty == ('/dev/' + fname).strip():
+						return SERVER + ':' + fields[0]
+				except:
+					continue
+	return ''
+
+def GetBoard(board):
+	for line in open(TARGETS):
+		target,bus,port = line.strip().split()
+		board = board.strip()
+		if (target != board):
+			continue
+
+		print target, bus, port
+		if (bus == 'usb'):
+			return ser2netport(port)
+		else:
+			return bus + ':' + port
+			
+	return ''
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((TCP_IP, TCP_PORT))
+s.listen(5)
+
+while 1:
+	conn, addr = s.accept()
+	print 'Connection address:', addr
+	data = conn.recv(BUFFER_SIZE)
+	if data:
+		print "received data:", data
+		output = GetBoard(data)
+#		p = sub.Popen(["/usr/local/bin/usbports",data],stdout=sub.PIPE,stderr=sub.PIPE)
+#		output, errors = p.communicate()
+		conn.send(output)  # echo
+	conn.close()
