@@ -1,0 +1,11 @@
+[Unit]
+Description=Serial over TCP (telnet) ser2net
+After=network.target remote-fs.target
+
+[Service]
+ExecStart=/usr/sbin/ser2net
+Restart=on-failure
+RestartSec=15s
+
+[Install]
+WantedBy=multi-user.target
