@@ -8,16 +8,10 @@ software =
 			copy1 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
+						filename = "@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
 						type = "raw";
 						compressed = true;
 						device = "/dev/mmcblk0p2";
-					}
-				);
-				scripts: (
-					{
-						filename = "emmcsetup.lua";
-						type = "lua";
 					}
 				);
                                 uboot: (
@@ -31,16 +25,10 @@ software =
 			copy2 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
+						filename = "@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
 						type = "raw";
 						compressed = true;
 						device = "/dev/mmcblk0p3";
-					}
-				);
-				scripts: (
-					{
-						filename = "emmcsetup.lua";
-						type = "lua";
 					}
 				);
                                 uboot: (
