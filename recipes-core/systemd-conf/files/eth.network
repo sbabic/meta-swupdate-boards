@@ -1,0 +1,6 @@
+[Match]
+Name=eth*
+KernelCommandLine=!nfsroot
+
+[Network]
+DHCP=yes
