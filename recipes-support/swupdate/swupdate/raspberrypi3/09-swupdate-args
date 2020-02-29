@@ -13,4 +13,10 @@ else
 	SWUPDATE_SURICATTA_ARGS=" "
 fi
 
-SWUPDATE_ARGS="-H raspberrypi3:1.0 ${selection} -f /etc/swupdate.cfg"
+if [ -e /media/etc/swupdate.cfg ];then
+	CFGFILE="/media/etc/swupdate.cfg"
+else
+	CFGFILE="/etc/swupdate.cfg"
+fi
+
+SWUPDATE_ARGS="-H raspberrypi3:1.0 ${selection} -f ${CFGFILE}"
