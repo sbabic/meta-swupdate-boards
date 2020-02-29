@@ -1,0 +1,13 @@
+[Unit]
+Description=Overlay /etc/
+Requires=overlays-etc-dirs.service
+After=overlays-etc-dirs.service
+
+[Mount]
+What=overlay
+Where=/etc
+Type=overlay
+Options=lowerdir=/etc,upperdir=/media/overlayfs/etc/upper,workdir=/media/overlayfs/etc/work
+
+[Install]
+WantedBy=local-fs.target

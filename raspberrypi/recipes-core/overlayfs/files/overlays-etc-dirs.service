@@ -1,0 +1,10 @@
+[Unit]
+Description=Create volatile upper and work dir for /etc overlayfs
+DefaultDependencies=no
+After=systemd-remount-fs.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/mkdir -p /media/overlayfs/etc/upper
+ExecStart=/bin/mkdir -p /media/overlayfs/etc/work
+RemainAfterExit=yes
