@@ -10,7 +10,7 @@ import re
 TCP_IP = ''
 TCP_PORT = 5005
 BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
-TARGETS = '/etc/ports'
+TARGETS = '/media/ports'
 SER2NETCONF = '/etc/ser2net.conf'
 SERVER = socket.gethostname()
 
