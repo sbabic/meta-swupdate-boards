@@ -6,6 +6,7 @@ IMAGE_FSTYPES += "btrfs.gz"
 
 IMAGE_INSTALL = "\
 	btrfs-tools \
+	libubootenv-bin \
 	packagegroup-core-boot \
 	packagegroup-core-full-cmdline \
 	${CORE_IMAGE_EXTRA_INSTALL} \
@@ -21,7 +22,7 @@ IMAGE_INSTALL = "\
 	swupdate-progress \
 	swupdate-www \
 	swupdate-tools \
-	u-boot-fw-utils \
+	u-boot-env \
 	usbline \
 	voltcraft \
 	"
