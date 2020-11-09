@@ -10,7 +10,7 @@ IMAGE_INSTALL = "\
 	packagegroup-core-boot \
 	packagegroup-core-full-cmdline \
 	${CORE_IMAGE_EXTRA_INSTALL} \
-	dhcp-client \
+	dhcpcd \
 	lua \
 	openocd \
 	ser2net \
