@@ -1,0 +1,36 @@
+software =
+{
+    version = "0.1.0";
+
+    sama5d27-som1-ek-sd = {
+    hardware-compatibility: ["1.0"];
+        stable : {
+            copy1 : {
+                images: ({
+                        filename = "core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        type = "raw";
+                        sha256 = "@core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        compressed = "zlib";
+                        device = "/dev/mmcblk0p2";
+                });
+                uboot: ({
+                        name = "rootpart";
+                        value = "2";
+                });
+            };
+            copy2 : {
+                images: ({
+                        filename = "core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        type = "raw";
+                        sha256 = "@core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        compressed = "zlib";
+                        device = "/dev/mmcblk0p3";
+                });
+                uboot: ({
+                        name = "rootpart";
+                        value = "3";
+                });
+            };
+        };
+    }
+}
