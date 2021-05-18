@@ -2,5 +2,5 @@ saveenv
 fdt addr ${fdt_addr} && fdt get value bootargs /chosen bootargs
 if env exists rpipart;then echo Booting from mmcblk0p${rpipart};else setenv rpipart 2;echo rpipart not set, default to ${rpipart};fi
 load mmc 0:${rpipart} ${kernel_addr_r} boot/@@KERNEL_IMAGETYPE@@
-setenv bootargs ${bootargs} root=/dev/mmcblk0p${rpipart}
+setenv bootargs "${bootargs} root=/dev/mmcblk0p${rpipart}"
 @@KERNEL_BOOTCMD@@ ${kernel_addr_r} - ${fdt_addr}
