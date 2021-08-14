@@ -23,4 +23,4 @@ do_install () {
     install -m 0644 ${WORKDIR}/overlays-etc-dirs.service ${D}${systemd_system_unitdir}
 }
 
-SYSTEMD_SERVICE_${PN} = "etc.mount overlays-etc-dirs.service"
+SYSTEMD_SERVICE:${PN} = "etc.mount overlays-etc-dirs.service"

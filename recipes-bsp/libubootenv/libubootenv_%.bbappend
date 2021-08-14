@@ -1,10 +1,10 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI_append_class-target = " file://fw_env.config"
+SRC_URI:append:class-target = " file://fw_env.config"
 
-do_install_append_class-target() {
+do_install:append:class-target() {
 	install -d ${D}${sysconfdir}
 	install -m 644 ${WORKDIR}/fw_env.config ${D}${sysconfdir}
 }
 
-FILES_${PN}_append_class-target = " ${sysconfdir}"
+FILES:${PN}:append:class-target = " ${sysconfdir}"
