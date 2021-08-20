@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 PACKAGE_BEFORE_PN += "${PN}-env"
-RPROVIDES_${PN}-env += "u-boot-default-env"
+RPROVIDES:${PN}-env += "u-boot-default-env"
