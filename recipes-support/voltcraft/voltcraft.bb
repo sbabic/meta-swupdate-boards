@@ -9,7 +9,7 @@ SRC_URI = "file://voltcraft.c \
 
 S = "${WORKDIR}"
 
-FILES_${PN} = "${bindir}"
+FILES:${PN} = "${bindir}"
 
 do_install () {
 	install -d ${D}/${bindir}

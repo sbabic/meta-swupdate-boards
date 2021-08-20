@@ -21,8 +21,8 @@ do_install () {
     	install -m 0644 ${WORKDIR}/usbline.service ${D}${systemd_system_unitdir}
 }
 
-FILES_${PN} = "${bindir} ${sysconfdir} ${systemd_system_unitdir}"
+FILES:${PN} = "${bindir} ${sysconfdir} ${systemd_system_unitdir}"
 
 INITSCRIPT_NAME = "usbline-start"
-INITSCRIPT_PARAMS_${PN} = "defaults 70 70"
-SYSTEMD_SERVICE_${PN} = "usbline.service"
+INITSCRIPT_PARAMS:${PN} = "defaults 70 70"
+SYSTEMD_SERVICE:${PN} = "usbline.service"
