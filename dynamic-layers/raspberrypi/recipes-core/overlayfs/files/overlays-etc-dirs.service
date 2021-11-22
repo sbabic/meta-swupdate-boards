@@ -8,3 +8,6 @@ Type=oneshot
 ExecStart=/bin/mkdir -p /media/overlayfs/etc/upper
 ExecStart=/bin/mkdir -p /media/overlayfs/etc/work
 RemainAfterExit=yes
+
+[Install]
+WantedBy=local-fs.target
