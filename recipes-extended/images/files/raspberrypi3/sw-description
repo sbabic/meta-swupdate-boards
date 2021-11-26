@@ -1,0 +1,69 @@
+software =
+{
+	version = "0.1.0";
+
+	raspberrypi3 = {
+		hardware-compatibility: [ "1.0"];
+		stable : {
+			copy1 : {
+				images: (
+					{
+						filename = "@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
+						type = "raw";
+						compressed = true;
+						device = "/dev/mmcblk0p2";
+						sha256 = "@@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
+						version = "@SWU_AUTO_VERSION:@@SYSTEM_IMAGE@@";
+						installed-directly = true;
+					}
+				);
+				files : (
+					{
+						filename = "u-boot-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[u-boot]@@";
+						type = "rawfile";
+						path = "/boot/u-boot.bin";
+						sha256 = "@u-boot-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[u-boot]@@";
+						version = "@SWU_AUTO_VERSION:u-boot";
+					}
+
+				)
+                                uboot: (
+                                        {
+                                        	name = "rpipart";
+                                  		value = "2";
+                                        }
+				);
+
+			};
+			copy2 : {
+				images: (
+					{
+						filename = "@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
+						type = "raw";
+						compressed = true;
+						device = "/dev/mmcblk0p3";
+						sha256 = "@@@SYSTEM_IMAGE@@-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[@@SYSTEM_IMAGE@@]@@";
+						version = "@SWU_AUTO_VERSION:@@SYSTEM_IMAGE@@";
+						installed-directly = true;
+					}
+				);
+				files : (
+					{
+						filename = "u-boot-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[u-boot]@@";
+						type = "rawfile";
+						path = "/boot/u-boot.bin";
+						sha256 = "u-boot-@@MACHINE@@@@SWUPDATE_IMAGES_FSTYPES[u-boot]@@";
+						version = "@SWU_AUTO_VERSION:u-boot";
+					}
+
+				)
+                                uboot: (
+                                        {
+                                        	name = "rpipart";
+                                  		value = "3";
+                                        }
+				);
+			};
+		};
+	}
+}

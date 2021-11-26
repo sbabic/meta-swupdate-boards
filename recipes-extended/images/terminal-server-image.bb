@@ -3,6 +3,14 @@ DESCRIPTION = "A console-only image to be used as terminal server together with 
 IMAGE_FEATURES += "ssh-server-openssh"
 
 IMAGE_FSTYPES += "btrfs.gz"
+# images to build before building swupdate image
+IMAGE_DEPENDS:append = " virtual/bootloader"
+
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+
+SRC_URI = "\
+    file://sw-description \
+"
 
 IMAGE_INSTALL = "\
 	btrfs-tools \
@@ -21,9 +29,15 @@ IMAGE_INSTALL = "\
 	swupdate \
 	swupdate-progress \
 	swupdate-www \
-	swupdate-tools \
+	swupdate-tools-ipc \
 	u-boot-env \
 	usbline \
 	voltcraft \
 	"
+
+SYSTEM_IMAGE = "terminal-server-image"
+SWUPDATE_IMAGES_FSTYPES[terminal-server-image] = ".ext4.gz"
+SWUPDATE_IMAGES += "u-boot"
+SWUPDATE_IMAGES_FSTYPES[u-boot] = ".bin"
 inherit core-image
+inherit swupdate-image
