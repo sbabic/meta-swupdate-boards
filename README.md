@@ -38,7 +38,8 @@ Usage
 
 The layer contains examples on how to use the SWUpdate project. Examples
 on how to deploy a "dual-copy" update strategy with some common boards
-(Beaglebone Black, Raspberry Pi) are provided.
+(Beaglebone Black, Raspberry Pi, Sama5d27-som1-ek-sd and Wandboard) are
+provided.
 
 Setup your environment accordingly and update `MACHINE` to desired target.
 
