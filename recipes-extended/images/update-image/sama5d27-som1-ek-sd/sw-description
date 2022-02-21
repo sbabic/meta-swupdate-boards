@@ -13,6 +13,10 @@ software =
                         compressed = "zlib";
                         device = "/dev/mmcblk0p2";
                 });
+		scripts: ({
+			filename = "emmcsetup.lua";
+			type = "lua";
+		});
                 uboot: ({
                         name = "rootpart";
                         value = "2";
@@ -26,6 +30,10 @@ software =
                         compressed = "zlib";
                         device = "/dev/mmcblk0p3";
                 });
+		scripts: ({
+			filename = "emmcsetup.lua";
+			type = "lua";
+		});
                 uboot: ({
                         name = "rootpart";
                         value = "3";
