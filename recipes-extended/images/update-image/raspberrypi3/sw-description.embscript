@@ -98,7 +98,7 @@ end ";
 					{
 						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
 						type = "raw";
-						compressed = true;
+						compressed = "zlib";
 						device = "/dev/mmcblk0p2";
 						hook = "allowInstall";
 					}
@@ -122,7 +122,7 @@ end ";
 					{
 						filename = "core-image-full-cmdline-raspberrypi3.ext4.gz";
 						type = "raw";
-						compressed = true;
+						compressed = "zlib";
 						device = "/dev/mmcblk0p3";
 						hook = "allowInstall";
 					}

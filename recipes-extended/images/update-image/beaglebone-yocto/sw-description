@@ -11,7 +11,7 @@ software =
 						filename = "core-image-full-cmdline-beaglebone.ext4.gz";
 						device = "/dev/mmcblk1p2";
 						type = "raw";
-						compressed = true;
+						compressed = "zlib";
 					}
 				);
 				scripts: (
@@ -38,7 +38,7 @@ software =
 						filename = "core-image-full-cmdline-beaglebone.ext4.gz";
 						device = "/dev/mmcblk1p3";
 						type = "raw";
-						compressed = true;
+						compressed = "zlib";
 					}
 				);
 				scripts: (
