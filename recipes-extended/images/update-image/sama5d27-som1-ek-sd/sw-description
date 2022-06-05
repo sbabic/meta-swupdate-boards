@@ -9,7 +9,7 @@ software =
                 images: ({
                         filename = "core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
                         type = "raw";
-                        sha256 = "@core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        sha256 = "$swupdate_get_sha256(core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz)";
                         compressed = "zlib";
                         device = "/dev/mmcblk0p2";
                 });
@@ -26,7 +26,7 @@ software =
                 images: ({
                         filename = "core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
                         type = "raw";
-                        sha256 = "@core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz";
+                        sha256 = "$swupdate_get_sha256(core-image-full-cmdline-sama5d27-som1-ek-sd.ext4.gz)";
                         compressed = "zlib";
                         device = "/dev/mmcblk0p3";
                 });
