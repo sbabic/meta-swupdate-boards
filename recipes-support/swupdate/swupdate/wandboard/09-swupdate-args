@@ -1,6 +1,6 @@
 rootfs=`swupdate -g`
 
-if [ $rootfs == '/dev/mmcblk2p1' ];then
+if [ $rootfs == 'mmcblk2p1' ];then
 	selection="-e stable,copy2"
 else
 	selection="-e stable,copy1"
