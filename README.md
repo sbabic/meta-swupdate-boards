@@ -1,6 +1,7 @@
 # meta-swupdate-boards
 
 Please see the corresponding sections below for details.
+Has Raspberrypi2 support, but is not tested yet.
 
 Dependencies
 ============

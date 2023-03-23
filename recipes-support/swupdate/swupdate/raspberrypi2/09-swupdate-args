@@ -1,0 +1,22 @@
+rootfs=`swupdate -g`
+
+if [ $rootfs == '/dev/mmcblk0p2' ];then
+	selection="-e stable,copy2"
+else
+	selection="-e stable,copy1"
+fi
+
+state=`fw_printenv ustate | cut -f 2 -d'='`
+if [ $state == 1 ];then
+	SWUPDATE_SURICATTA_ARGS="-c 2"
+else
+	SWUPDATE_SURICATTA_ARGS=" "
+fi
+
+if [ -e /media/etc/swupdate.cfg ];then
+	CFGFILE="/media/etc/swupdate.cfg"
+else
+	CFGFILE="/etc/swupdate.cfg"
+fi
+
+SWUPDATE_ARGS="-H raspberrypi2:1.0 ${selection} -f ${CFGFILE}"
