@@ -8,7 +8,7 @@ fi
 
 state=`fw_printenv ustate | cut -f 2 -d'='`
 if [ -z "$state" ];then
-	fw_setenv ustate 2
+	fw_setenv ustate 1
 	state=`fw_printenv ustate | cut -f 2 -d'='`
 fi
 if [ $state == 1 ];then
