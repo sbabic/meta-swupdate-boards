@@ -12,7 +12,6 @@ if [ -z "$state" ];then
 	state=`fw_printenv ustate | cut -f 2 -d'='`
 fi
 if [ $state == 1 ];then
-	fw_setenv ustate 2
 	SWUPDATE_SURICATTA_ARGS="-c 2"
 else
 	SWUPDATE_SURICATTA_ARGS=" "
