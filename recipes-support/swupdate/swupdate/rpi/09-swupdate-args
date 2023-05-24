@@ -7,6 +7,10 @@ else
 fi
 
 state=`fw_printenv ustate | cut -f 2 -d'='`
+if [ -z "$state" ];then
+	fw_setenv ustate 1
+	state=`fw_printenv ustate | cut -f 2 -d'='`
+fi
 if [ $state == 1 ];then
 	SWUPDATE_SURICATTA_ARGS="-c 2"
 else
@@ -19,4 +23,4 @@ else
 	CFGFILE="/etc/swupdate.cfg"
 fi
 
-SWUPDATE_ARGS="-H raspberrypi3:1.0 ${selection} -f ${CFGFILE}"
+SWUPDATE_ARGS="-H raspberrypi:1.0 ${selection} -p 'reboot' -f ${CFGFILE}"

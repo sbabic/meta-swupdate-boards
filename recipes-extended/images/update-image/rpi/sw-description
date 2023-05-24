@@ -2,24 +2,17 @@ software =
 {
 	version = "0.1.0";
 
-	raspberrypi4-64 = {
+	raspberrypi = {
 		hardware-compatibility: [ "1.0"];
 		stable : {
 			copy1 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi4-64.ext4.gz";
+						filename = "core-image-full-cmdline-@MACHINE@.ext4.gz";
 						type = "raw";
 						compressed = "zlib";
 						device = "/dev/mmcblk0p2";
-						sha256 = "$swupdate_get_sha256(core-image-full-cmdline-raspberrypi4-64.ext4.gz)";
-					}
-				);
-				scripts: (
-					{
-						filename = "emmcsetup.lua";
-						type = "lua";
-						sha256 = "$swupdate_get_sha256(emmcsetup.lua)";
+						sha256 = "$swupdate_get_sha256(core-image-full-cmdline-@MACHINE@.ext4.gz)";
 					}
 				);
 				bootenv: (
@@ -36,18 +29,11 @@ software =
 			copy2 : {
 				images: (
 					{
-						filename = "core-image-full-cmdline-raspberrypi4-64.ext4.gz";
+						filename = "core-image-full-cmdline-@MACHINE@.ext4.gz";
 						type = "raw";
 						compressed = "zlib";
 						device = "/dev/mmcblk0p3";
-						sha256 = "$swupdate_get_sha256(core-image-full-cmdline-raspberrypi4-64.ext4.gz)";
-					}
-				);
-				scripts: (
-					{
-						filename = "emmcsetup.lua";
-						type = "lua";
-						sha256 = "$swupdate_get_sha256(emmcsetup.lua)";
+						sha256 = "$swupdate_get_sha256(core-image-full-cmdline-@MACHINE@.ext4.gz)";
 					}
 				);
 				bootenv: (
