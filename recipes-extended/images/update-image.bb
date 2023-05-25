@@ -17,9 +17,3 @@ IMAGE_DEPENDS = "core-image-full-cmdline"
 SWUPDATE_IMAGES = "core-image-full-cmdline"
 
 SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".ext4.gz"
-
-do_swuimage:prepend () {
-    machine = d.getVar("MACHINE", True) 
-    workdir = d.getVar('WORKDIR', True)
-    os.system(f'sed -i "s#@MACHINE@#{machine}#g" {workdir}/sw-description')
-}
