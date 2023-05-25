@@ -2,7 +2,7 @@ software =
 {
 	version = "0.1.0";
 
-	raspberrypi = {
+	@@MACHINE@@ = {
 		hardware-compatibility: [ "1.0"];
 		stable : {
 			copy1 : {

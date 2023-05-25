@@ -23,4 +23,4 @@ else
 	CFGFILE="/etc/swupdate.cfg"
 fi
 
-SWUPDATE_ARGS="-H raspberrypi:1.0 ${selection} -p 'reboot' -f ${CFGFILE}"
+SWUPDATE_ARGS="-H @MACHINE@:1.0 ${selection} -p 'reboot' -f ${CFGFILE}"
