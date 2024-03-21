@@ -1,5 +1,5 @@
 function preinst()
-	local out = "Post installed script called"
+	local out = "Pre installed script called"
 
 	return true, out
 
