@@ -16,4 +16,4 @@ IMAGE_DEPENDS = "core-image-full-cmdline"
 # images and files that will be included in the .swu image
 SWUPDATE_IMAGES = "core-image-full-cmdline"
 
-SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".ext4.gz"
+SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".rootfs.ext4.gz"
