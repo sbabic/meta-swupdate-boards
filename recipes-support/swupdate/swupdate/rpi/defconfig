@@ -1,4 +1,4 @@
-#
+
 # Automatically generated file; DO NOT EDIT.
 # Swupdate Configuration
 #
@@ -59,8 +59,9 @@ CONFIG_DOWNLOAD=y
 # CONFIG_DOWNLOAD_SSL is not set
 CONFIG_CHANNEL_CURL=y
 CONFIG_HASH_VERIFY=y
-CONFIG_SIGNED_IMAGES=y
-CONFIG_ENCRYPTED_IMAGES=y
+# Enable to update images with verified source
+#CONFIG_SIGNED_IMAGES=y
+#CONFIG_ENCRYPTED_IMAGES=y
 CONFIG_SURICATTA=y
 
 #
