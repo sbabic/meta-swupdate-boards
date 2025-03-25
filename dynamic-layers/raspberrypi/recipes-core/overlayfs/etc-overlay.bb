@@ -19,8 +19,8 @@ do_install () {
     install -d ${D}${systemd_system_unitdir}
 
     install -d ${D}/etc/ecs
-    install -m 0644 ${UNPACKDIR}/etc.mount ${D}${systemd_system_unitdir}
-    install -m 0644 ${UNPACKDIR}/overlays-etc-dirs.service ${D}${systemd_system_unitdir}
+    install -m 0644 ${WORKDIR}/etc.mount ${D}${systemd_system_unitdir}
+    install -m 0644 ${WORKDIR}/overlays-etc-dirs.service ${D}${systemd_system_unitdir}
 }
 
 SYSTEMD_SERVICE:${PN} = "etc.mount overlays-etc-dirs.service"
