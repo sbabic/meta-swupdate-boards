@@ -11,11 +11,6 @@ if [ -z "$state" ];then
 	fw_setenv ustate 1
 	state=`fw_printenv ustate | cut -f 2 -d'='`
 fi
-if [ $state == 1 ];then
-	SWUPDATE_SURICATTA_ARGS="-c 2"
-else
-	SWUPDATE_SURICATTA_ARGS=" "
-fi
 
 if [ -e /media/etc/swupdate.cfg ];then
 	CFGFILE="/media/etc/swupdate.cfg"

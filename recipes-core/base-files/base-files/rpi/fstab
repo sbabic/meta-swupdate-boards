@@ -7,4 +7,4 @@ tmpfs                /run                 tmpfs      mode=0755,nodev,nosuid,stri
 tmpfs                /var/volatile        tmpfs      defaults              0  0
 
 /dev/mmcblk0p1       /boot                auto       defaults,sync         0  0
-/dev/mmcblk0p4       /media               auto       defaults,sync         0  0
+#/dev/mmcblk0p4       /media               auto       defaults,sync         0  0
