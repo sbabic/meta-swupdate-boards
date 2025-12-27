@@ -2,7 +2,7 @@ FILESEXTRAPATHS:append := "${THISDIR}/${PN}:"
 
 PACKAGECONFIG_CONFARGS = ""
 
-SRC_URI += " \
+SRC_URI:append:rpi = " \
     file://09-swupdate-args \
     file://swupdate.cfg \
     "
@@ -12,7 +12,7 @@ SRC_URI:append:beaglebone-yocto = " file://10-remove-force-ro"
 # additional dependencies required to run swupdate on the target
 RDEPENDS:${PN} += "u-boot-fw-utils"
 
-do_install:append() {
+do_install:append:rpi () {
     install -m 0644 ${WORKDIR}/09-swupdate-args ${D}${libdir}/swupdate/conf.d/
     sed -i "s#@MACHINE@#${MACHINE}#g" ${D}${libdir}/swupdate/conf.d/09-swupdate-args
 
